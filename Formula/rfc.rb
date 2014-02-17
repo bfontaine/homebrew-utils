@@ -2,8 +2,8 @@ require 'formula'
 
 class Rfc < Formula
   homepage 'https://github.com/bfontaine/rfc#readme'
-  url 'https://github.com/bfontaine/rfc/archive/v0.1.0.tar.gz'
-  sha1 'ac22e6e438ab3fcc1fcd6ef144b3341d379568b9'
+  url 'https://github.com/bfontaine/rfc/archive/v0.1.1.tar.gz'
+  sha1 '11b9e30f48a56a3462fde9152673b566ae90d2fa'
 
   def install
     bin.install 'rfc'
