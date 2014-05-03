@@ -10,6 +10,10 @@ class Up < Formula
   end
 
   test do
-    system "#{bin}/up", "--version"
+    ENV['COMMANDS'] = pwd/'foo'
+    touch 'foo'
+    system "#{bin}/up", "--add", "x", "ls"
+    system "#{bin}/up", "x"
+    system "#{bin}/up", "--rm", "x"
   end
 end
