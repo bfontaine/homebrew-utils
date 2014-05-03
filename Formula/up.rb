@@ -10,9 +10,9 @@ class Up < Formula
   end
 
   test do
-    ENV['COMMANDS'] = pwd/'foo'
+    ENV['COMMANDS'] = pwd+'/foo'
     touch 'foo'
-    system "#{bin}/up", "--add", "x", "ls"
+    system "#{bin}/up", "--add", "x", "touch y"
     system "#{bin}/up", "x"
     system "#{bin}/up", "--rm", "x"
   end
