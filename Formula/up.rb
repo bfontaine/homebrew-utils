@@ -2,11 +2,12 @@ require "formula"
 
 class Up < Formula
   homepage 'https://github.com/bfontaine/up#readme'
-  url "https://github.com/bfontaine/up/archive/0.1.3.tar.gz"
-  sha1 "17b8676661f717db025ca62f9ac7e4c682f32a26"
+  url "https://github.com/bfontaine/up/archive/0.1.4.tar.gz"
+  sha1 "eb6d6a2a54f18929ef9877f8e1c7252ae6cc7cc5"
 
   def install
     bin.install 'bin/up'
+    bash_completion.install "utils/up.bash"
   end
 
   test do
