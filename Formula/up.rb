@@ -2,8 +2,8 @@ require "formula"
 
 class Up < Formula
   homepage 'https://github.com/bfontaine/up#readme'
-  url "https://github.com/bfontaine/up/archive/0.1.4.tar.gz"
-  sha1 "eb6d6a2a54f18929ef9877f8e1c7252ae6cc7cc5"
+  url "https://github.com/bfontaine/up/archive/0.1.5.tar.gz"
+  sha1 "d7d1087d051c0fd61cafecaf583f7900fbdf3929"
 
   def install
     bin.install 'bin/up'
