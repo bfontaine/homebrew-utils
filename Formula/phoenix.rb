@@ -5,11 +5,14 @@ class Phoenix < Formula
   sha256 "fd313b2caf7f97cc5018129e7dba72ab6e2d27bd886fddbdcf55532277edd20f"
 
   depends_on "homebrew/science/opencv"
-  depends_on "pkgconfig" => :build
+  depends_on "pkg-config" => :build
   depends_on "boost"
 
-  # fix the build on OS X [TODO: raise the issue upstream]
-  patch :DATA
+  # Fix the build on OS X
+  patch do
+    url "https://github.com/ebemunk/phoenix/commit/bff0eb5c0e40f19a96049cf35249863ec9164aec.patch"
+    sha256 "4d9b41790cb2d141e9153c68eb6409a4164bc7b15c4ae426b2b10a4353d65d45"
+  end
 
   def install
     # don't build for windows
@@ -25,35 +28,3 @@ class Phoenix < Formula
     system "#{bin}/phoenix", "--ela", "-j", "-f", test_fixtures("test.jpg")
   end
 end
-
-__END__
-diff --git a/debugger.cpp b/debugger.cpp
-index 13dd689..c504762 100644
---- a/debugger.cpp
-+++ b/debugger.cpp
-@@ -21,7 +21,7 @@ debugger& debugger::instance() {
- void debugger::start(string msg) {
- 	if(!active) return;
- 
--	t_start = chrono::high_resolution_clock::now();
-+	t_start = chrono::system_clock::now();
- 	print(msg + " starting");
- }
- 
-@@ -29,7 +29,7 @@ void debugger::start(string msg) {
- void debugger::end(string msg) {
- 	if(!active) return;
- 
--	t_end = chrono::high_resolution_clock::now();
-+	t_end = chrono::system_clock::now();
- 
- 	int secs = chrono::duration_cast<chrono::seconds>(t_end - t_start).count();
- 	int millisecs = chrono::duration_cast<chrono::milliseconds>(t_end - t_start).count();
-@@ -46,4 +46,4 @@ void debugger::print(string msg) {
- 	if(!active) return;
- 
- 	cout << "DEBUG: " << msg << endl;
--}
-\ No newline at end of file
-+}
-
