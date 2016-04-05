@@ -1,7 +1,7 @@
 class Rfc < Formula
   homepage "https://github.com/bfontaine/rfc#readme"
   url "https://github.com/bfontaine/rfc/archive/v0.2.2.tar.gz"
-  sha1 "07aa0a5c3c0b02b30e671ef63b56babd5165c8f3"
+  sha256 "fd6f3a820a0c16eb074110cf46c4df9c3b76ae6b4c6ed68dca1a59e5fd75dfaa"
 
   def install
     bin.install "rfc"

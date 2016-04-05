@@ -1,7 +1,7 @@
 class Pmars < Formula
   homepage "http://www.koth.org/pmars/"
   url "https://downloads.sourceforge.net/project/corewar/pMARS/0.9.2/pmars-0.9.2.tar.gz"
-  sha1 "b49162a4f63ed6c4e94e28b762c41ff73057b99f"
+  sha256 "2ae8638ec6b65350cf9f813a60e338b534dffa78c3e85f1823a2bee8b7c20a34"
 
   # Fixes compilation when using ncurses
   patch :DATA
