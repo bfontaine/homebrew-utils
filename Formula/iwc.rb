@@ -1,7 +1,7 @@
 class Iwc < Formula
   homepage "https://github.com/bfontaine/iwc"
-  url "https://github.com/bfontaine/iwc/archive/0.1.1.tar.gz"
-  sha256 "75730584ae0ba54e7a6d73d8ce353a9b0ea359aecebc4d094b698c4935a86ea9"
+  url "https://github.com/bfontaine/iwc/archive/0.1.2.tar.gz"
+  sha256 "fcd7b45275f474aef8ba7dbda6a36336465d2e1d865297214326d39d29f7b7ea"
   head "https://github.com/bfontaine/iwc.git"
 
   def install
