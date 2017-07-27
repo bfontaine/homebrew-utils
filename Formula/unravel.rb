@@ -9,14 +9,19 @@ class Unravel < Formula
   head "https://github.com/pesterhazy/unravel.git"
 
   depends_on "node"
-  depends_on "lumo"
+  depends_on "lumo" if OS.mac?
 
   def install
-    # This is installed by Homebrew
-    inreplace "package.json",
-      '"lumo-cljs": "1.2.0",', ""
-    inreplace "bin/unravel",
-      '"${UNRAVEL_HOME}/node_modules/lumo-cljs/bin/lumo"', "lumo"
+    if OS.mac?
+      # This is installed by Homebrew
+      inreplace "package.json",
+        '"lumo-cljs": "1.2.0",', ""
+      inreplace "bin/unravel",
+        '"${UNRAVEL_HOME}/node_modules/lumo-cljs/bin/lumo"', "lumo"
+    else
+      inreplace "package.json",
+        '"lumo-cljs": "1.2.0",', '"lumo-cljs": "1.6.0",'
+    end
 
     # For some reason it doesn't find its resource
     inreplace "src/unravel/loop.cljs",
