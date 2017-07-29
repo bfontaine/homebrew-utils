@@ -3,9 +3,9 @@ require "language/node"
 class Unravel < Formula
   desc "Command-line client for Clojure REPLs"
   homepage "https://github.com/pesterhazy/unravel"
+  url "https://github.com/pesterhazy/unravel/archive/0.2.2.tar.gz"
+  sha256 "144b2a96dc5900dada9e668f765ac63d55b97770525f1c994b8b41084048a9cc"
 
-  # Unfortunately we don't have stable releases for now.
-  # https://github.com/pesterhazy/unravel/issues/10
   head "https://github.com/pesterhazy/unravel.git"
 
   depends_on "node"
@@ -15,18 +15,10 @@ class Unravel < Formula
     if OS.mac?
       # This is installed by Homebrew
       inreplace "package.json",
-        '"lumo-cljs": "1.2.0",', ""
+        '"lumo-cljs": "1.6.0",', ""
       inreplace "bin/unravel",
         '"${UNRAVEL_HOME}/node_modules/lumo-cljs/bin/lumo"', "lumo"
-    else
-      inreplace "package.json",
-        '"lumo-cljs": "1.2.0",', '"lumo-cljs": "1.6.0",'
     end
-
-    # For some reason it doesn't find its resource
-    inreplace "src/unravel/loop.cljs",
-      '"resources/unrepl/blob.clj"',
-      %Q("#{libexec}/lib/node_modules/unravel-repl/resources/unrepl/blob.clj")
 
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
 
