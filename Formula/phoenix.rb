@@ -10,7 +10,7 @@ class Phoenix < Formula
 
   # Fix the build on OS X
   patch do
-    url "https://github.com/ebemunk/phoenix/commit/bff0eb5c0e40f19a96049cf35249863ec9164aec.patch"
+    url "https://github.com/ebemunk/phoenix/commit/bff0eb5c0e40f19a96049cf35249863ec9164aec.patch?full_index=1"
     sha256 "4d9b41790cb2d141e9153c68eb6409a4164bc7b15c4ae426b2b10a4353d65d45"
   end
 
