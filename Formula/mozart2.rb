@@ -1,9 +1,10 @@
 class Mozart2 < Formula
+  desc "Mozart Programming System v2"
   homepage "https://github.com/mozart/mozart2"
   head "https://github.com/mozart/mozart2.git"
 
   depends_on "cmake" => :build
-  depends_on "boost" => "with-c++11"
+  depends_on "boost"
   depends_on "emacs"
   depends_on "homebrew/versions/llvm33"
   depends_on "homebrew/dupes/tcl-tk"
@@ -13,7 +14,7 @@ class Mozart2 < Formula
     cmake_args = std_cmake_args.dup
 
     # removes default -DCMAKE_BUILD_TYPE=None
-    cmake_args.reject! { |arg| /^-DCMAKE_BUILD_TYPE=/ === arg }
+    cmake_args.reject! { |arg| arg =~ /^-DCMAKE_BUILD_TYPE=/ }
     cmake_args << "-DCMAKE_BUILD_TYPE=Release"
 
     emacs_prefix = Formula["emacs"].opt_prefix
