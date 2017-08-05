@@ -1,4 +1,5 @@
 class Pmars < Formula
+  desc "Official Core War simulator of the ICWS"
   homepage "http://www.koth.org/pmars/"
   url "https://downloads.sourceforge.net/project/corewar/pMARS/0.9.2/pmars-0.9.2.tar.gz"
   sha256 "2ae8638ec6b65350cf9f813a60e338b534dffa78c3e85f1823a2bee8b7c20a34"
