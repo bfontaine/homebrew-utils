@@ -1,8 +1,8 @@
 class Rfc < Formula
   desc "Bash tool to read RFCs from the command-line"
   homepage "https://github.com/bfontaine/rfc#readme"
-  url "https://github.com/bfontaine/rfc/archive/v0.2.3.tar.gz"
-  sha256 "03b51b1045c61d6b2ebd563d47f3f3c36c7a4f37d5c4b7d29b0c8aa073e8e2d3"
+  url "https://github.com/bfontaine/rfc/archive/v0.2.4.tar.gz"
+  sha256 "b707e3ea15b9478b802b2e1d140ce45b2fa537334134b52a3dfad5e809150464"
 
   def install
     bin.install "rfc"
