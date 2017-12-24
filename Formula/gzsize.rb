@@ -1,8 +1,8 @@
 class Gzsize < Formula
   desc "Print the uncompressed size of a GZip file"
   homepage "https://bfontaine.github.io/gzsize/"
-  url "https://github.com/bfontaine/gzsize/archive/0.1.1.tar.gz"
-  sha256 "ffb9cc1e5ed10443b1bcf2f711787bc7f69eee27ed83b48f2ccf9d80e39554dd"
+  url "https://github.com/bfontaine/gzsize/archive/0.1.2.tar.gz"
+  sha256 "32e20cb2e570f16bc30e62c4fda406ede23b23dfd313fc82528173827487b170"
 
   head "https://github.com/bfontaine/gzsize.git"
 
