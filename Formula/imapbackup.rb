@@ -6,7 +6,7 @@ class Imapbackup < Formula
   version "1.4g"
   sha256 "5f4cccf2a9076fefe496dca6409ca2f85b5a7bf59faaad4be930809a1625231d"
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "python" if MacOS.version <= :snow_leopard
 
   def install
     bin.install "imapbackup.py" => "imapbackup"

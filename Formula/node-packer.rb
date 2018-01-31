@@ -1,5 +1,5 @@
 class NodePacker < Formula
-  desc "Ahead-of-time (AOT) Compiler designed for Node.js."
+  desc "Ahead-of-time (AOT) Compiler designed for Node.js"
   homepage "http://enclose.io"
   url "https://github.com/pmq20/node-packer/archive/v1.5.0.tar.gz"
   sha256 "0bb94148ca130c2bd252caac46ab56cf32a82165746c16cd68411a75b669b378"

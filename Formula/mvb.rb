@@ -11,6 +11,6 @@ class Mvb < Formula
   test do
     touch "bar"
     system "#{bin}/mvb", "foo", "bar"
-    assert File.exist? "foo"
+    assert_predicate (testpath/"foo"), :exist?
   end
 end
