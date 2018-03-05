@@ -11,7 +11,7 @@ class Httpdoc < Formula
     ln_s buildpath, "#{buildpath}/src/github.com/bfontaine/httpdoc"
     ENV["GOPATH"] = buildpath
 
-    (libexec/"github.com/bfontaine/httpdoc").install "_docs"
+    (libexec/"src/github.com/bfontaine/httpdoc").install "_docs"
     system "go", "build", "-o", "#{libexec}/httpdoc"
 
     (bin/"httpdoc").write_env_script libexec/"httpdoc",
