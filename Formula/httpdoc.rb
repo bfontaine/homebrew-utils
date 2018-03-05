@@ -15,7 +15,7 @@ class Httpdoc < Formula
     system "go", "build", "-o", "#{libexec}/httpdoc"
 
     (bin/"httpdoc").write_env_script libexec/"httpdoc",
-      "GOPATH" => "$GOPATH:#{opt_libexec}"
+      "GOPATH" => opt_libexec.to_s
   end
 
   test do
