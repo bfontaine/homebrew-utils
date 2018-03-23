@@ -1,6 +1,6 @@
 class Zprint < Formula
   desc "Library to reformat Clojure and Clojurescript source code and s-expressions"
-  homepage ""
+  homepage "https://github.com/kkinnear/zprint"
   url "https://github.com/kkinnear/zprint/releases/download/0.4.7/zprint-filter-0.4.7",
     :using => :nounzip
   sha256 "22c8f9651842bba96c27b4a8202ed5d938bc24c5c288899400d622f6569bb5a0"
