@@ -55,11 +55,11 @@ class Wpcleaner < Formula
       r.stage (libexec/r.name).parent
     end
 
-    # FIXME it doesn't see license files e.g.:
-    #   File not found: NOTICE_commons-codec.txt
+    licenses = "#{libexec}/libs"
+
     (bin/"WPCleaner").write <<~SH
     #!/bin/bash
-    exec java -cp "#{libexec}/WPCleaner.jar:#{libexec}/libs/*" \
+    exec java -cp "#{libexec}/WPCleaner.jar:#{libexec}/libs/*:#{licenses}" \
          -Dlogback.configurationFile=#{libexec}/logback.xml \
          -Xmx1024M \
          org.wikipediacleaner.WikipediaCleaner \
