@@ -8,8 +8,8 @@ class HerculesGit < Formula
   url "https://github.com/src-d/hercules/archive/v10.2.0.tar.gz"
   sha256 "3e5a8ee5f048643aef4101d70809c089b8ca91b5d95636d68961da7a64555ea8"
 
-  depends_on "go" => :build
   depends_on "dep" => :build
+  depends_on "go" => :build
   depends_on "protobuf" => :build
   depends_on "python"
 
