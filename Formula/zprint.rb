@@ -2,11 +2,11 @@ class Zprint < Formula
   desc "Library to reformat Clojure(Script) source code and s-expressions"
   homepage "https://github.com/kkinnear/zprint"
   if OS.linux?
-    url "https://github.com/kkinnear/zprint/releases/download/0.4.13/zprintl-0.4.13",
+    url "https://github.com/kkinnear/zprint/releases/download/0.4.16/zprintl-0.4.16",
       :using => :nounzip
-    sha256 "6477333c9e3abb978632cd3212840fdc769e2233a4743ea2adddbb17c86d11ef"
+    sha256 "dd050df8932a252b6223a60295d462a732772067bb8aab1e57202c8082830f5e"
   else
-    url "https://github.com/kkinnear/zprint/releases/download/0.4.13/zprintm-0.4.13",
+    url "https://github.com/kkinnear/zprint/releases/download/0.4.16/zprintm-0.4.16",
       :using => :nounzip
   end
 
