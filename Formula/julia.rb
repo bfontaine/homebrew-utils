@@ -2,7 +2,6 @@ class Julia < Formula
   desc "Programming language (Linux-only binary formula)"
   homepage "https://julialang.org/"
 
-  # Mac users: brew cask install julia
   if OS.linux?
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
@@ -19,9 +18,16 @@ class Julia < Formula
       url "https://julialang-s3.julialang.org/bin/linux/x86/1.3/julia-1.3.0-linux-i686.tar.gz"
       sha256 "e43339e72b2e71f8df343e6f542bf3a48cbbf7e9c135b076d5d651d9153615c9"
     end
+  else
+    # We must define a version and a non-empty URL
+    url "-"
+    version "0"
   end
 
   def install
+    if OS.mac?
+      raise "Mac users: please use 'brew cask install julia' instead"
+    end
     prefix.install Dir["*"]
   end
 
