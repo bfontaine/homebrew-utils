@@ -8,11 +8,6 @@ class Unravel < Formula
 
   head "https://github.com/pesterhazy/unravel.git"
 
-  devel do
-    url "https://github.com/Unrepl/unravel/archive/v0.3.0-beta.2.tar.gz"
-    sha256 "786acffe0a2b0dc7fb2675215764739fee39a5da1b9ac72d7c8c49afab785408"
-  end
-
   depends_on "node"
   depends_on "lumo" if OS.mac?
 
