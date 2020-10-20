@@ -1,27 +1,21 @@
 class Grape < Formula
   desc "Syntax-aware grep-like for Clojure"
   homepage "https://github.com/bfontaine/grape"
-  # This is necessary until upstream (aka me) provide binaries for Linux
-  if OS.linux?
-    url "https://github.com/bfontaine/grape/releases/download/0.3.0/grape-0.3.0-standalone.jar"
-    sha256 "aee05320694ce955fc111a3d257061c3ce2bb5e37180d5e469ac23ca7f44435d"
-  else
+  version "0.3.0"
+  revision 1
+
+  if OS.mac?
     url "https://github.com/bfontaine/grape/releases/download/0.3.0/grape-macos-amd64.zip"
     sha256 "77ee2f01b256512537ea1b45cf22c1227f404161bcf1f44f2615012a358ff372"
+  else
+    url "https://github.com/bfontaine/grape/releases/download/0.3.0/grape-linux-amd64.zip"
+    sha256 "bdd49890b87a8619e486d7050bb5025459d7bc76c02959b2356cc9bae5271f6b"
   end
 
   bottle :unneeded
 
-  depends_on :java
-
   def install
-    if OS.linux?
-      jar = "grape-#{version}-standalone.jar"
-      libexec.install jar
-      bin.write_jar_script libexec/jar, "grape"
-    else
-      bin.install "grape-macos-amd64" => "grape"
-    end
+    bin.install Dir["grape-*"].first => "grape"
   end
 
   test do
