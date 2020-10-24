@@ -1,21 +1,20 @@
 class Grape < Formula
   desc "Syntax-aware grep-like for Clojure"
   homepage "https://github.com/bfontaine/grape"
-  version "0.3.0"
-  revision 1
+  version "0.4.0"
 
   if OS.mac?
-    url "https://github.com/bfontaine/grape/releases/download/0.3.0/grape-macos-amd64.zip"
-    sha256 "77ee2f01b256512537ea1b45cf22c1227f404161bcf1f44f2615012a358ff372"
+    url "https://github.com/bfontaine/grape/releases/download/0.4.0/grape-0.4.0-macos-amd64.zip"
+    sha256 "85c35cdc04a0eec2b72596f0dbe33e03a5139699af7319b58fe915c3dd121f28"
   else
-    url "https://github.com/bfontaine/grape/releases/download/0.3.0/grape-linux-amd64.zip"
-    sha256 "bdd49890b87a8619e486d7050bb5025459d7bc76c02959b2356cc9bae5271f6b"
+    url "https://github.com/bfontaine/grape/releases/download/0.4.0/grape-0.4.0-linux-amd64.zip"
+    sha256 "6fc6033e0abf2aced6737021bb3ffa7f69d6715a8bcdcf549b00325c9ab87c73"
   end
 
   bottle :unneeded
 
   def install
-    bin.install Dir["grape-*"].first => "grape"
+    bin.install "grape"
   end
 
   test do
