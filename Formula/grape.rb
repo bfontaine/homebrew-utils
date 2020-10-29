@@ -1,14 +1,14 @@
 class Grape < Formula
   desc "Syntax-aware grep-like for Clojure"
   homepage "https://github.com/bfontaine/grape"
-  version "0.5.1"
+  version "0.6.0"
 
   if OS.mac?
-    url "https://github.com/bfontaine/grape/releases/download/0.5.1/grape-macos-amd64.zip"
-    sha256 "0d1de29ccc7368382b742bfcc2b447f1d8634bc5570199e2d759a03a2c143211"
+    url "https://github.com/bfontaine/grape/releases/download/0.6.0/grape-macos-amd64.zip"
+    sha256 "b625f5e2bd55e28ddeb1f0c92f0a2251e948dac1a7403e4aa93dd29da51ac10b"
   else
-    url "https://github.com/bfontaine/grape/releases/download/0.5.1/grape-linux-amd64.zip"
-    sha256 "7a38582e05a09043d82599b36a29fedc22ab7f14e2ed63f50576933abc431fa4"
+    url "https://github.com/bfontaine/grape/releases/download/0.6.0/grape-linux-amd64.zip"
+    sha256 "92c5a64596d78c09ca4abaf0c60c0df4610aab7538109f4f71717d3975ec70b1"
   end
 
   bottle :unneeded
