@@ -2,7 +2,7 @@ class Wpcleaner < Formula
   desc "Wikipedia maintenance tool"
   homepage "https://en.wikipedia.org/wiki/Wikipedia:WPCleaner"
 
-  depends_on :java => "1.8+"
+  depends_on "openjdk"
 
   head do
     url "https://tools.wmflabs.org/wpcleaner/wpcleaner/WPCleaner.jar",
