@@ -26,6 +26,14 @@ class Geneweb < Formula
 
     binaries = OS.linux? ? %w[gwd gwsetup] : %w[geneweb.command gwd.command gwsetup.command]
 
+    if OS.linux?
+      # these scripts assume bases/ and gw/ are in the same directory
+      # use an absolute path instead.
+      binaries.each do |cmd|
+        inreplace libexec/cmd, "../gw", "#{libexec}/gw"
+      end
+    end
+
     binaries.each do |cmd|
       bin.write_exec_script libexec/cmd
     end
