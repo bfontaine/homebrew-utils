@@ -11,8 +11,6 @@ class Grape < Formula
     sha256 "92c5a64596d78c09ca4abaf0c60c0df4610aab7538109f4f71717d3975ec70b1"
   end
 
-  bottle :unneeded
-
   def install
     bin.install "grape"
   end
