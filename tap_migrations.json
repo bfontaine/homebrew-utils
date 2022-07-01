@@ -1,4 +1,5 @@
 {
   "eq": "oscaro/public",
+  "julia": "homebrew/core",
   "twtxt": "homebrew/core"
 }
