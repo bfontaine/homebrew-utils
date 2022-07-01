@@ -1,5 +1,5 @@
 class GitVanitySha < Formula
-  desc "vanity hex prefixes for your commit SHAs"
+  desc "Vanity hex prefixes for your commit SHAs"
   homepage "https://github.com/mattbaker/git-vanity-sha"
   head "https://github.com/mattbaker/git-vanity-sha.git"
 

@@ -5,7 +5,7 @@ class Ncurses2048 < Formula
   head "https://github.com/alewmoose/2048-in-terminal.git"
 
   conflicts_with "c2048",
-    :because => "both install a '2048' executable"
+    because: "both install a '2048' executable"
 
   def install
     system "make"

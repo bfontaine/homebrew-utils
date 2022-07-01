@@ -6,8 +6,8 @@ class Gcstar < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gobject-introspection"
-  depends_on "pango"
   depends_on "gtk+"
+  depends_on "pango"
 
   resource "perl-extutils-depends" do
     url "http://search.cpan.org/CPAN/authors/id/X/XA/XAOC/ExtUtils-Depends-0.405.tar.gz"
@@ -53,7 +53,7 @@ class Gcstar < Formula
     system "./install", "--prefix=#{libexec}"
     share.install libexec/"man"
     (bin/"gcstar").write_env_script(libexec/"bin/gcstar",
-                                    :PERL5LIB => ENV["PERL5LIB"])
+                                    PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

@@ -1,7 +1,5 @@
-require "language/go"
-
 class GitlabCli < Formula
-  desc "Simple command line interface to GitLab"
+  desc "Simple command-line interface to GitLab"
   homepage "https://github.com/makkes/gitlab-cli"
   url "https://github.com/makkes/gitlab-cli/archive/v3.2.0.tar.gz"
   sha256 "5cf404e7effb15c6b68211c6a5e5a4b9de65a72d4f899f0793f08e9d02583c96"

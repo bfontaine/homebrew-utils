@@ -17,11 +17,11 @@ class Grape < Formula
 
   test do
     (testpath/"test.clj").write <<~EOS
-    (ns my.test)
+      (ns my.test)
 
-    (defn f
-      [x]
-      (* x 42))
+      (defn f
+        [x]
+        (* x 42))
     EOS
     assert_equal "(* x 42)",
       shell_output("#{bin}/grape --no-line-numbers '(* x $)' #{testpath}/test.clj").strip

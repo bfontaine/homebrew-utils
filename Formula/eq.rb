@@ -3,8 +3,8 @@ class Eq < Formula
   homepage "https://github.com/jonase/eq"
   head "https://github.com/jonase/eq.git"
 
-  depends_on "ocaml"
   depends_on "opam" => :build
+  depends_on "ocaml"
 
   def install
     opamroot = buildpath/"opamroot"

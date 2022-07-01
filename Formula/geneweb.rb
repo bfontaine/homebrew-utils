@@ -1,8 +1,8 @@
 class Geneweb < Formula
   desc "Open-source genealogy software with a web interface"
   homepage "https://geneweb.org"
-  license "GPL-2.0"
   version "7.0.0"
+  license "GPL-2.0"
 
   on_macos do
     url "https://github.com/geneweb/geneweb/releases/download/v7.0.0/geneweb-macos-10.15-88536ed4.zip"

@@ -1,9 +1,9 @@
 class Mozart2 < Formula
   desc "Mozart Programming System v2"
   homepage "https://github.com/mozart/mozart2"
-  head "https://github.com/mozart/mozart2.git"
   url "https://github.com/mozart/mozart2/archive/refs/tags/v2.0.1.tar.gz"
   sha256 "0670e95f90068b87cce42b7e216e0cd2b162859eab10e9266290a3274275e2b6"
+  head "https://github.com/mozart/mozart2.git"
 
   depends_on "cmake" => :build
   depends_on "boost"
@@ -30,7 +30,7 @@ class Mozart2 < Formula
     cmake_args << "-DLLVM_SRC_DIR=#{llvm_prefix}"
     cmake_args << "-DLLVM_BUILD_DIR=#{llvm_prefix}"
 
-    on_macos do
+    if OS.mac?
       # Set flags to use libc++ and C++0x headers
       cpp_headers_dir = %w[
         /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
@@ -42,7 +42,7 @@ class Mozart2 < Formula
       cmake_args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -I#{cpp_headers_dir}"
     end
 
-    on_linux do
+    if OS.linux?
       cmake_args << "-DCMAKE_CXX_COMPILER=#{llvm_prefix}/bin/clang++"
       cmake_args << "-DCMAKE_C_COMPILER=#{llvm_prefix}/bin/clang"
     end

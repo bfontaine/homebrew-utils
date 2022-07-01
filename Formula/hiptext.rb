@@ -4,15 +4,15 @@ class Hiptext < Formula
   url "https://github.com/jart/hiptext/releases/download/0.2/hiptext-0.2.tar.gz"
   sha256 "7f2217dec8775b445be6745f7bd439c24ce99c4316a9faf657bee7b42bc72e8f"
 
+  depends_on "pkg-config" => :build
   # hiptext doesn't build with ffmpeg 3.x
   # https://github.com/jart/hiptext/pull/27
   depends_on "ffmpeg@2.8"
-  depends_on "libpng"
-  depends_on "jpeg"
   depends_on "freetype"
-  depends_on "glog"
   depends_on "gflags"
-  depends_on "pkg-config" => :build
+  depends_on "glog"
+  depends_on "jpeg"
+  depends_on "libpng"
 
   def install
     # gflags doesn't supply .pc files

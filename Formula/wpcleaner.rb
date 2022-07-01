@@ -2,11 +2,9 @@ class Wpcleaner < Formula
   desc "Wikipedia maintenance tool"
   homepage "https://en.wikipedia.org/wiki/Wikipedia:WPCleaner"
 
-  depends_on "openjdk"
-
   head do
     url "https://tools.wmflabs.org/wpcleaner/wpcleaner/WPCleaner.jar",
-      :using => :nounzip
+      using: :nounzip
 
     # from https://tools.wmflabs.org/wpcleaner/wpcleaner/digest.txt
     %w[getdown.txt
@@ -65,8 +63,10 @@ class Wpcleaner < Formula
         resource path do
           url "https://tools.wmflabs.org/wpcleaner/wpcleaner/#{path}"
         end
-      end
+    end
   end
+
+  depends_on "openjdk"
 
   def install
     libexec.install Dir["*"]
@@ -77,17 +77,17 @@ class Wpcleaner < Formula
     licenses = "#{libexec}/libs"
 
     (bin/"WPCleaner").write <<~SH
-    #!/bin/bash
-    exec java -cp "#{libexec}/WPCleaner.jar:#{libexec}/libs/*:#{licenses}" \
-         -Dlogback.configurationFile=#{libexec}/logback.xml \
-         -Xmx1024M \
-         org.wikipediacleaner.WikipediaCleaner \
-         $@
+      #!/bin/bash
+      exec java -cp "#{libexec}/WPCleaner.jar:#{libexec}/libs/*:#{licenses}" \
+           -Dlogback.configurationFile=#{libexec}/logback.xml \
+           -Xmx1024M \
+           org.wikipediacleaner.WikipediaCleaner \
+           $@
     SH
   end
 
   test do
     # GUI app with no command-line option
-    assert (bin/"WPCleaner").executable?
+    assert_predicate (bin/"WPCleaner"), :executable?
   end
 end

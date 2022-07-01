@@ -4,14 +4,16 @@ class Phoenix < Formula
   url "https://github.com/ebemunk/phoenix/archive/1.1.tar.gz"
   sha256 "fd313b2caf7f97cc5018129e7dba72ab6e2d27bd886fddbdcf55532277edd20f"
 
-  depends_on "opencv"
   depends_on "pkg-config" => :build
   depends_on "boost"
+  depends_on "opencv"
 
-  # Fix the build on OS X
-  patch do
-    url "https://github.com/ebemunk/phoenix/commit/bff0eb5c0e40f19a96049cf35249863ec9164aec.patch"
-    sha256 "4d9b41790cb2d141e9153c68eb6409a4164bc7b15c4ae426b2b10a4353d65d45"
+  on_macos do
+    # Fix the build on macOS
+    patch do
+      url "https://github.com/ebemunk/phoenix/commit/bff0eb5c0e40f19a96049cf35249863ec9164aec.patch?full_index=1"
+      sha256 "4d9b41790cb2d141e9153c68eb6409a4164bc7b15c4ae426b2b10a4353d65d45"
+    end
   end
 
   def install

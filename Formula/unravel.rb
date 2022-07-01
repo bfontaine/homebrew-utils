@@ -9,7 +9,10 @@ class Unravel < Formula
   head "https://github.com/pesterhazy/unravel.git"
 
   depends_on "node"
-  depends_on "lumo" if OS.mac?
+
+  on_macos do
+    depends_on "lumo"
+  end
 
   def install
     if OS.mac?
@@ -24,7 +27,7 @@ class Unravel < Formula
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
 
     (bin/"unravel").write_env_script libexec/"bin/unravel",
-      :UNRAVEL_HOME => libexec/"lib/node_modules/unravel-repl"
+      UNRAVEL_HOME: libexec/"lib/node_modules/unravel-repl"
   end
 
   test do

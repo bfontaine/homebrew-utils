@@ -2,7 +2,7 @@ class Smuggler < Formula
   desc "Tool to run and build containers with Docker"
   homepage "https://github.com/jbdalido/smg"
   url "https://github.com/jbdalido/smg.git",
-    :revision => "9bf6185f53fb4d75a004ee27aa5db68def52345e"
+    revision: "9bf6185f53fb4d75a004ee27aa5db68def52345e"
   version "0.5.2"
 
   head "https://github.com/jbdalido/smg.git"
