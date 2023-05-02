@@ -10,20 +10,7 @@ class Unravel < Formula
 
   depends_on "node"
 
-  on_macos do
-    depends_on "lumo"
-  end
-
   def install
-    if OS.mac?
-      # This is installed by Homebrew
-      lumo_version = build.stable? ? "1.6.0" : "1.7.0"
-      inreplace "package.json",
-        %Q("lumo-cljs": "#{lumo_version}",), ""
-      inreplace "bin/unravel",
-        '"${UNRAVEL_HOME}/node_modules/lumo-cljs/bin/lumo"', "lumo"
-    end
-
     system "npm", "install", *Language::Node.std_npm_install_args(libexec)
 
     (bin/"unravel").write_env_script libexec/"bin/unravel",
