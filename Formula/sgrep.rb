@@ -1,6 +1,6 @@
 class Sgrep < Formula
   desc "Sorted grep"
-  homepage "https://sgrep.sourceforge.io/"
+  homepage "https://www.cs.helsinki.fi/u/jjaakkol/sgrep.html"
   url "https://downloads.sourceforge.net/project/sgrep/sgrep/sgrep-1.0/sgrep-1.0.tgz"
   sha256 "dc5edc5eb667077f18c04d6c1d89bf08818a986fb5734414f8f937639ddad13e"
 
