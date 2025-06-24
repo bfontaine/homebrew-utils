@@ -3,15 +3,15 @@ class Zprint < Formula
   homepage "https://github.com/kkinnear/zprint"
 
   on_macos do
-    url "https://github.com/kkinnear/zprint/releases/download/1.2.4/zprintm-1.2.4",
+    url "https://github.com/kkinnear/zprint/releases/download/1.3.0/zprintm-1.3.0",
       using: :nounzip
-    sha256 "ce8cf67d64827ec83c784e1f9fa2077aa084de1792738763372150ee33304022"
+    sha256 "9e1301b25a84126e556eda16f2f4bf626c1a2032e7ab33902b1b30bccd963417"
   end
 
   on_linux do
-    url "https://github.com/kkinnear/zprint/releases/download/1.2.4/zprintl-1.2.4",
+    url "https://github.com/kkinnear/zprint/releases/download/1.3.0/zprintl-1.3.0",
       using: :nounzip
-    sha256 "835b79c425ca1f80cfdb3ec6b361c0fd9c95a2a395a02765273ca786008e43ea"
+    sha256 "3447ad2fe18847d884a1555e8384763c461b55b8959063a7454d68e76fe2071e"
   end
 
   def install
