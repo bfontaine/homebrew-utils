@@ -11,7 +11,7 @@ class Unravel < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *Language::Node.std_npm_args(libexec)
 
     (bin/"unravel").write_env_script libexec/"bin/unravel",
       UNRAVEL_HOME: libexec/"lib/node_modules/unravel-repl"

@@ -8,9 +8,9 @@ class Mozart2 < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "emacs"
-  depends_on "tcl-tk"
   depends_on "llvm"
   depends_on "openjdk"
+  depends_on "tcl-tk"
 
   def install
     cmake_args = std_cmake_args.dup

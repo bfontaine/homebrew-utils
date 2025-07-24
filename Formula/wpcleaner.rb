@@ -60,9 +60,9 @@ class Wpcleaner < Formula
        tasks/frwiki/ISBN_ISSN.txt
        tasks/frwiki/ListCheckWiki.txt
        tasks/frwiki/UpdateCheckWiki.txt].each do |path|
-        resource path do
-          url "https://tools.wmflabs.org/wpcleaner/wpcleaner/#{path}"
-        end
+      resource path do
+        url "https://tools.wmflabs.org/wpcleaner/wpcleaner/#{path}"
+      end
     end
   end
 
